@@ -5,6 +5,9 @@
     "header": {
       "type": "header",
       "settings": {
+        "show_logo": true,
+        "enable_left_and_right_padding": true,
+        "show_cart_icon": true
       }
     }
   },

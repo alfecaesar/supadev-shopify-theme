@@ -2,7 +2,37 @@
   "sections": {
     "image_banner": {
       "type": "image-banner",
+      "blocks": {
+        "small_text_cfpdez": {
+          "type": "small_text",
+          "settings": {
+            "text": "Shopify eCommerce experts."
+          }
+        },
+        "large_text_tePqcm": {
+          "type": "large_text",
+          "settings": {
+            "text": "We design, build and\noptimise exceptional\neCommerce websites."
+          }
+        },
+        "button_xPkhNz": {
+          "type": "button",
+          "settings": {
+            "text": "Start your project",
+            "link": "shopify:\/\/pages\/contact"
+          }
+        }
+      },
+      "block_order": [
+        "small_text_cfpdez",
+        "large_text_tePqcm",
+        "button_xPkhNz"
+      ],
       "settings": {
+        "mobile_banner_image": "shopify:\/\/shop_images\/hands-hold-paint-items-over-a-pallet.jpg",
+        "desktop_banner_image": "shopify:\/\/shop_images\/photographer-working-at-his-desk.jpg",
+        "banner_text_max_width": 352,
+        "enable_left_and_right_padding": true
       }
     },
     "featured_product_9bnXxD": {
