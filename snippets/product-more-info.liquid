@@ -1,3 +1,42 @@
-<div>
-    [Place the accordion here]
+{{ 'accordion.css' | asset_url | stylesheet_tag }}
+
+<div class="accordion product-more-info-container">
+  {% for accordion in product.metafields.custom.accordion.value %}
+    <div class="accordion-item">
+      <button class="accordion-toggle" aria-expanded="true">
+        {{ accordion.label }}
+      </button>
+      <div class="accordion-content">
+        {{ accordion.content | metafield_tag }}
+      </div>
+    </div>
+  {% endfor %}
 </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const accordionToggles = document.querySelectorAll('.accordion-toggle');
+
+    accordionToggles.forEach(function (toggle) {
+      toggle.addEventListener('click', function () {
+        const content = this.nextElementSibling;
+        const isExpanded = this.getAttribute('aria-expanded') === 'true';
+
+        // Close all other accordion sections
+        accordionToggles.forEach(function (item) {
+          item.setAttribute('aria-expanded', 'false');
+          item.nextElementSibling.style.maxHeight = null;
+        });
+
+        // Toggle current section
+        if (!isExpanded) {
+          this.setAttribute('aria-expanded', 'true');
+          content.style.maxHeight = content.scrollHeight + 'px';
+        } else {
+          this.setAttribute('aria-expanded', 'false');
+          content.style.maxHeight = null;
+        }
+      });
+    });
+  });
+</script>

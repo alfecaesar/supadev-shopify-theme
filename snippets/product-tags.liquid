@@ -1,0 +1,11 @@
+{% if product.tags.size > 0 %}
+    <div class="product-tags">
+      <ul>
+        {% for tag in product.tags %}
+          <li>{{ tag }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+{% else %}
+    <p>No tags available for this product.</p>
+{% endif %}

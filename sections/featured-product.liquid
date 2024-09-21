@@ -1,14 +1,55 @@
+{{ 'featured-product.css' | asset_url | stylesheet_tag }}
+
 {% assign product = section.settings.product %}
-<div class="page-width">
-  <h2>Featured Product Here</h2>
+<div class="page-width featured-product">
+  <div class="featured-product-info-container">
+    {% if product != blank %}
+      <div class="product-img">
+        {% 
+          render 'product-image', 
+            product: product
+        %}
+      </div>
+      <div class="product-info">
+        {%- for block in section.blocks -%}
+          {%- case block.type -%}
+            {%- when 'product_title' -%}
+              <h2>{{ product.title }}</h2>
+            {%- when 'product_price' -%}
+              {%  
+                render 'product-price',
+                  product: product
+              %}
+            {%- when 'product_description' -%}
+              <div>{{ product.description }}</div>
+            {%- when 'product_tags' -%}
+              {%  
+                render 'product-tags',
+                  product: product
+              %}
+            {%- when 'add_to_cart_button' -%}
+              {%- render 'buy-buttons',
+                product: product,
+              -%}
+          {%- endcase -%}
+        {%- endfor -%}
+      </div>
+    {% endif %}
+  </div>
 
-  {% if product != blank %}
-    <h4>{{ product.title }}</h4>
-    {{ product.description }}
+  {% if section.settings.show_product_more_info %}
+    {% 
+      render 'product-more-info',
+        product: product
+    %}
   {% endif %}
-
-  {% render 'product-more-info' %}
 </div>
+
+{% style %}
+  {%- if section.settings.enable_left_and_right_padding == false -%}
+    .featured-product{ padding-left: 0; padding-right: 0; }
+  {%- endif -%}
+{% endstyle %}
 
 {% schema %}
 {
@@ -18,6 +59,45 @@
       "type": "product",
       "id": "product",
       "label": "Product"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_product_more_info",
+      "label": "Show Product More Info",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_left_and_right_padding",
+      "label": "Enable left and right padding",
+      "default": false
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Product Title",
+      "type": "product_title",
+      "settings": []
+    },
+    {
+      "name": "Product Price",
+      "type": "product_price",
+      "settings": []
+    },
+    {
+      "name": "Product Description",
+      "type": "product_description",
+      "settings": []
+    },
+    {
+      "name": "Product Tags",
+      "type": "product_tags",
+      "settings": []
+    },
+    {
+      "name": "Add to Cart Button",
+      "type": "add_to_cart_button",
+      "settings": []
     }
   ],
   "presets": [

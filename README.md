@@ -78,3 +78,8 @@ After finishing, kindly submit the following items through email:
 "The only way to do great work is to love what you do. – Steve Jobs"
 
 As you embark on this assessment, remember that passion is the key to excellence. Let your love for what you do shine through your work. Best wishes!
+
+
+#####
+
+DEV NOTE: https://github.com/Drive-Digital/Shopify-Developer-Assessment-1

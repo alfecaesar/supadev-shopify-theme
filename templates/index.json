@@ -37,8 +37,44 @@
     },
     "featured_product_9bnXxD": {
       "type": "featured-product",
+      "blocks": {
+        "product_title_DnPNRr": {
+          "type": "product_title",
+          "settings": {
+          }
+        },
+        "product_price_CTVG6k": {
+          "type": "product_price",
+          "settings": {
+          }
+        },
+        "product_description_tDnxGm": {
+          "type": "product_description",
+          "settings": {
+          }
+        },
+        "product_tags_M7XxNw": {
+          "type": "product_tags",
+          "settings": {
+          }
+        },
+        "add_to_cart_button_mPAKUk": {
+          "type": "add_to_cart_button",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "product_title_DnPNRr",
+        "product_price_CTVG6k",
+        "product_description_tDnxGm",
+        "product_tags_M7XxNw",
+        "add_to_cart_button_mPAKUk"
+      ],
       "settings": {
-        "product": ""
+        "product": "the-3p-fulfilled-snowboard",
+        "show_product_more_info": true,
+        "enable_left_and_right_padding": true
       }
     }
   },
