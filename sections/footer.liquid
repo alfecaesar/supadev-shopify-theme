@@ -1,11 +1,113 @@
+{{ 'footer.css' | asset_url | stylesheet_tag }}
+
+
 <footer class="footer">
-  <div class="page-width">
-    Footer Here
+  <div class="page-width footer-container footer-content-{{ section.settings.footer_-_alignment }}">
+    <div class="footer-content">
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+          {%- when 'footer_-_title' -%}
+            <h3>{{ block.settings.text }}</h3>
+      
+          {%- when 'footer_-_email' -%}
+            {% assign mailToEmail = block.settings.email | prepend: 'mailto:' %}
+            <div class="email-link">{{ block.settings.email | link_to: mailToEmail }}</div>
+      
+          {%- when 'footer_-_copyright' -%}
+            <div class="copyright-text">{{ block.settings.text }}</div>
+      
+        {%- endcase -%}
+      {%- endfor -%}
+    </div>
+    <div class="footer-quicklinks">
+      {%- assign quicklinks = section.settings.quicklinks.links -%}
+      <ul>
+        {%- for link in quicklinks -%}
+          <li>{{ link.title | link_to: link.url }}</li>
+        {%- endfor -%}
+      </ul>
+    </div>
   </div>
 </footer>
 
+{% style %}
+  {%- if section.settings.enable_left_and_right_padding == false -%}
+    .footer-container{ padding-left: 0; padding-right: 0; }
+  {%- endif -%}
+{% endstyle %}
+
 {% schema %}
-{
-  "name": "Footer"
-}
+  {
+  "name": "Footer",
+  "settings": [
+    {
+      "type": "select",
+      "id": "footer_-_alignment",
+      "label": "Footer - Alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "left"
+        },
+        {
+          "value": "right",
+          "label": "right"
+        }
+      ],
+      "default": "left",
+      "info": "For medium to large screen view alignment"
+    },
+    {
+      "type": "link_list",
+      "id": "quicklinks",
+      "label": "Quicklinks"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_left_and_right_padding",
+      "label": "Enable left and right padding",
+      "default": false
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Footer - Title",
+      "type": "footer_-_title",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text"
+        }
+      ]
+    },
+    {
+      "name": "Footer - Email",
+      "type": "footer_-_email",
+      "settings": [
+        {
+          "type": "text",
+          "id": "email",
+          "label": "Email"
+        }
+      ]
+    },
+    {
+      "name": "Footer - Copyright",
+      "type": "footer_-_copyright",
+      "settings": [
+        {
+          "type": "text",
+          "label": "Text",
+          "id": "text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Footer"
+    }
+  ]
+}  
 {% endschema %}

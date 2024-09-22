@@ -172,7 +172,7 @@ h6,
 /* Page Width */
 
 .page-width {
-  max-width: 1120px;
+  max-width: 1220px;
   margin: 0 auto;
   padding: 0 1.5rem;
 }
@@ -229,3 +229,27 @@ h6,
 /* --------------------
 Custom CSS 
 */
+
+a{
+  color: #2BD896;
+  text-decoration: none;
+}
+
+.header__icon--cart{
+  position: relative;
+}
+
+.cart-count-bubble{
+  position: absolute;
+  top: 0;
+  left: 13px;
+  background: #000;
+  width: 20px;
+  height: 20px;
+  font-size: 10px;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}

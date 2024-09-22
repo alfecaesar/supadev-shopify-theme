@@ -1,14 +1,96 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "sections": {
     "image_banner": {
       "type": "image-banner",
+      "blocks": {
+        "small_text_cfpdez": {
+          "type": "small_text",
+          "settings": {
+            "text": "Shopify eCommerce experts."
+          }
+        },
+        "large_text_tePqcm": {
+          "type": "large_text",
+          "settings": {
+            "text": "We design, build and\noptimise exceptional\neCommerce websites."
+          }
+        },
+        "button_xPkhNz": {
+          "type": "button",
+          "settings": {
+            "text": "Start your project",
+            "link": "shopify:\/\/pages\/contact"
+          }
+        }
+      },
+      "block_order": [
+        "small_text_cfpdez",
+        "large_text_tePqcm",
+        "button_xPkhNz"
+      ],
       "settings": {
+        "mobile_banner_image": "shopify:\/\/shop_images\/hands-hold-paint-items-over-a-pallet.jpg",
+        "desktop_banner_image": "shopify:\/\/shop_images\/photographer-working-at-his-desk.jpg",
+        "banner_text_max_width": 352,
+        "enable_banner_overlay": true,
+        "enable_left_and_right_padding": true
       }
     },
     "featured_product_9bnXxD": {
       "type": "featured-product",
+      "blocks": {
+        "product_title_DnPNRr": {
+          "type": "product_title",
+          "settings": {
+          }
+        },
+        "product_price_CTVG6k": {
+          "type": "product_price",
+          "settings": {
+          }
+        },
+        "product_description_tDnxGm": {
+          "type": "product_description",
+          "settings": {
+          }
+        },
+        "product_tags_M7XxNw": {
+          "type": "product_tags",
+          "settings": {
+          }
+        },
+        "product_variant_YTVe6p": {
+          "type": "product_variant",
+          "settings": {
+          }
+        },
+        "add_to_cart_button_mPAKUk": {
+          "type": "add_to_cart_button",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "product_title_DnPNRr",
+        "product_price_CTVG6k",
+        "product_description_tDnxGm",
+        "product_tags_M7XxNw",
+        "product_variant_YTVe6p",
+        "add_to_cart_button_mPAKUk"
+      ],
       "settings": {
-        "product": ""
+        "product": "the-3p-fulfilled-snowboard",
+        "show_product_more_info": true,
+        "enable_left_and_right_padding": true
       }
     }
   },

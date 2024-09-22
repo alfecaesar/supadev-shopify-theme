@@ -1,0 +1,26 @@
+{% assign original_price = product.compare_at_price %}
+{% assign sale_price = product.price %}
+
+{% if original_price > sale_price %}
+  <div class="product-pricing">
+    <span class="sale-price">
+      {{ sale_price | money }}
+    </span>
+
+    <span class="original-price">
+      {{ original_price | money }}
+    </span>
+    
+    <span class="save-amount">
+      save
+      {{ original_price | minus: sale_price | money }}
+    </span>
+  </div>
+{% else %}
+  <!-- Just display the normal price if there's no sale -->
+  <div class="product-pricing">
+    <span class="normal-price">
+      {{ sale_price | money }}
+    </span>
+  </div>
+{% endif %}

@@ -1,0 +1,49 @@
+{% if product.variants.size > 1 %}
+    <div class="variant-color-selector">
+      <label for="product-color">Choose a color:</label>
+      <select id="product-color" name="id">
+        {% for variant in product.variants %}
+            <option value="{{ variant.id }}" {% if variant == product.selected_or_first_available_variant %}selected{% endif %}>
+              {{ variant.option1 }}
+            </option>
+        {% endfor %}
+      </select>
+    </div>
+  {% else %}
+    <p>This product does not have multiple variants based on color.</p>
+  {% endif %}
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const variantSelector = document.getElementById('product-color');
+      variantSelector.addEventListener('change', function() {
+        const selectedVariantId = this.value;
+        
+        // Redirect to the product page with the selected variant
+        window.location.href = '?variant=' + selectedVariantId;
+      });
+    });
+  </script>
+  
+  <!-- Basic CSS for styling the color selector dropdown -->
+  <style>
+    .variant-color-selector {
+      margin: 10px 0;
+    }
+  
+    .variant-color-selector label {
+      font-weight: bold;
+      margin-right: 5px;
+      font-size: 14px;
+    }
+  
+    .variant-color-selector select {
+      padding: 5px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 14px;
+      max-width: 200px;
+      width: 100%;
+    }
+  </style>
+  

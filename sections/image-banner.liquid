@@ -1,14 +1,125 @@
 {{ 'image-banner.css' | asset_url | stylesheet_tag }}
 
 <div class="image-banner">
-  <div>
-    <h2>Message Text Here</h2>
+  <div class="banner-imgs">
+    <div class="banner-img-mobile">
+      {{ section.settings.mobile_banner_image 
+        | image_url: width: 767, height: 500
+        | image_tag: 
+          preload: true }}
+    </div>
+    <div class="banner-img-desktop">
+      {{ section.settings.desktop_banner_image 
+        | image_url: width: 1920, height: 471
+        | image_tag: 
+          preload: true }}
+    </div>
+    {%- if section.settings.enable_banner_overlay -%}
+      <div class="banner-overlay"></div>
+    {%- endif -%}
+  </div>
+  <div class="banner-content">
+    <div class="page-width banner-content-container">
+      <div class="banner-content-text">
+        {%- for block in section.blocks -%}
+          {%- case block.type -%}       
+            {%- when 'small_text' -%}
+              <h1>{{ block.settings.text }}</h1>
+            {%- when 'large_text' -%}
+              <h3>{{ block.settings.text }}</h3>
+            {%- when 'button' -%}
+              <a class="button" href="{{ block.settings.link }} ">{{ block.settings.text }}</a>
+          {%- endcase -%}
+        {%- endfor -%}
+      </div>
+    </div>
   </div>
 </div>
+
+{% style %}
+  {%- if section.settings.enable_left_and_right_padding == false -%}
+    .banner-content-container{ padding-left: 0; padding-right: 0; }
+  {%- endif -%}
+  .banner-content-text{
+    max-width: {{ section.settings.banner_text_max_width | append: 'px' }};
+    min-width: 352px;
+    width: 100%;
+  }
+{% endstyle %}
 
 {% schema %}
 {
   "name": "Image banner",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "mobile_banner_image",
+      "label": "Mobile - Banner Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "desktop_banner_image",
+      "label": "Desktop - Banner Image"
+    },
+    {
+      "type": "number",
+      "id": "banner_text_max_width",
+      "label": "Banner Text Max Width",
+      "default": 352
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_banner_overlay",
+      "label": "Enable Banner Overlay",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_left_and_right_padding",
+      "label": "Enable left and right padding",
+      "default": false
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Small Text",
+      "type": "small_text",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text"
+        }
+      ]
+    },
+    {
+      "name": "Large Text",
+      "type": "large_text",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text"
+        }
+      ]
+    },
+    {
+      "name": "Button",
+      "type": "button",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
   "presets": [
     {
       "name": "Image banner"
