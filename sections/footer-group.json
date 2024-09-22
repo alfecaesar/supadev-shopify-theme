@@ -1,3 +1,12 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "name": "Footer",
   "type": "footer",
@@ -5,19 +14,19 @@
     "footer": {
       "type": "footer",
       "blocks": {
-        "footer_title_MXwwTY": {
+        "footer_title_rbQ7ny": {
           "type": "footer_-_title",
           "settings": {
             "text": "CONTACT US"
           }
         },
-        "footer_email_mWRLNt": {
+        "footer_email_9BPVik": {
           "type": "footer_-_email",
           "settings": {
             "email": "hello@shopify.com"
           }
         },
-        "footer_copyright_hJFzU9": {
+        "footer_copyright_wGFGqL": {
           "type": "footer_-_copyright",
           "settings": {
             "text": "Copyright 2023 Drive Digital. All rights reserved."
@@ -25,9 +34,9 @@
         }
       },
       "block_order": [
-        "footer_title_MXwwTY",
-        "footer_email_mWRLNt",
-        "footer_copyright_hJFzU9"
+        "footer_title_rbQ7ny",
+        "footer_email_9BPVik",
+        "footer_copyright_wGFGqL"
       ],
       "settings": {
         "footer_-_alignment": "left",
