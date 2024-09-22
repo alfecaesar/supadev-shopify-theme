@@ -22,6 +22,13 @@
     outline: none;
     background-color: #FFF;
     border: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.accordion-toggle svg{
+    transition: all ease-in-out 0.3s;
 }
 
 .accordion-toggle:hover {
@@ -55,8 +62,15 @@
     border-top: 1px solid #000;
 }
 
+[aria-expanded="true"] svg{
+    transform: rotate(180deg);
+}
+
 @media (max-width: 767px){
     .accordion-content *{
         font-size: 12px;
+    }
+    .accordion{
+        margin-bottom: 30px;
     }
 }

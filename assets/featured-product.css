@@ -84,6 +84,9 @@
 
 .product-img img{
     width: 100%;
+    max-width: 660px;
+    object-position: center center;
+    object-fit: cover;
 }
 
 .product-img{
@@ -93,5 +96,18 @@
 @media (max-width: 767px){
     .featured-product-info-container{
         flex-direction: column;
+    }
+    .product-info h2{
+        font-size: 14px;
+    }
+    .product-pricing .sale-price, 
+    .product-pricing .normal-price,
+    .product-info p,
+    .product-tags div{
+        font-size: 12px;
+    }
+    .featured-product-info-container{
+        padding-top: 35px;
+        padding-bottom: 35px;
     }
 }

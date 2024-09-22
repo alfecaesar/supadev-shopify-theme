@@ -28,6 +28,7 @@
         var cartItemCount = cart.item_count;
         
         // Update all elements displaying cart quantities
+        document.querySelector('.cart-count-bubble').style.display = 'flex';
         document.querySelectorAll('.cart-quantity').forEach(function(element) {
           element.textContent = cartItemCount;
         });
