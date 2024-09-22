@@ -234,3 +234,22 @@ a{
   color: #2BD896;
   text-decoration: none;
 }
+
+.header__icon--cart{
+  position: relative;
+}
+
+.cart-count-bubble{
+  position: absolute;
+  top: 0;
+  left: 13px;
+  background: #000;
+  width: 20px;
+  height: 20px;
+  font-size: 10px;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
