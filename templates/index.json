@@ -32,6 +32,7 @@
         "mobile_banner_image": "shopify:\/\/shop_images\/hands-hold-paint-items-over-a-pallet.jpg",
         "desktop_banner_image": "shopify:\/\/shop_images\/photographer-working-at-his-desk.jpg",
         "banner_text_max_width": 352,
+        "enable_banner_overlay": true,
         "enable_left_and_right_padding": true
       }
     },
@@ -58,6 +59,11 @@
           "settings": {
           }
         },
+        "product_variant_YTVe6p": {
+          "type": "product_variant",
+          "settings": {
+          }
+        },
         "add_to_cart_button_mPAKUk": {
           "type": "add_to_cart_button",
           "settings": {
@@ -69,6 +75,7 @@
         "product_price_CTVG6k",
         "product_description_tDnxGm",
         "product_tags_M7XxNw",
+        "product_variant_YTVe6p",
         "add_to_cart_button_mPAKUk"
       ],
       "settings": {

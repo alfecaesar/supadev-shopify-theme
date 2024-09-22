@@ -20,6 +20,7 @@
       const productId = addToCartButton.dataset.productId;
       const spinner = document.getElementById('loading-spinner');
       const successMessage = document.getElementById('add-to-cart-message');
+      const selectedVariant = document.getElementById('product-color').value;
   
       addToCartButton.addEventListener('click', function(event) {
         event.preventDefault();
@@ -37,7 +38,8 @@
           },
           body: JSON.stringify({
             id: productId,
-            quantity: 1
+            quantity: 1,
+            variant: selectedVariant
           })
         })
         .then(response => {

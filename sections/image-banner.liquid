@@ -14,6 +14,9 @@
         | image_tag: 
           preload: true }}
     </div>
+    {%- if section.settings.enable_banner_overlay -%}
+      <div class="banner-overlay"></div>
+    {%- endif -%}
   </div>
   <div class="banner-content">
     <div class="page-width banner-content-container">
@@ -63,6 +66,12 @@
       "id": "banner_text_max_width",
       "label": "Banner Text Max Width",
       "default": 352
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_banner_overlay",
+      "label": "Enable Banner Overlay",
+      "default": false
     },
     {
       "type": "checkbox",

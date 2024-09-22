@@ -4,7 +4,35 @@
   "sections": {
     "footer": {
       "type": "footer",
+      "blocks": {
+        "footer_title_MXwwTY": {
+          "type": "footer_-_title",
+          "settings": {
+            "text": "CONTACT US"
+          }
+        },
+        "footer_email_mWRLNt": {
+          "type": "footer_-_email",
+          "settings": {
+            "email": "hello@shopify.com"
+          }
+        },
+        "footer_copyright_hJFzU9": {
+          "type": "footer_-_copyright",
+          "settings": {
+            "text": "Copyright 2023 Drive Digital. All rights reserved."
+          }
+        }
+      },
+      "block_order": [
+        "footer_title_MXwwTY",
+        "footer_email_mWRLNt",
+        "footer_copyright_hJFzU9"
+      ],
       "settings": {
+        "footer_-_alignment": "left",
+        "quicklinks": "footer",
+        "enable_left_and_right_padding": true
       }
     }
   },

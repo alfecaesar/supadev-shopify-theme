@@ -27,6 +27,11 @@
                 render 'product-tags',
                   product: product
               %}
+            {%- when 'product_tags' -%}
+              {%  
+                render 'product-variant',
+                  product: product
+              %}
             {%- when 'add_to_cart_button' -%}
               {%- render 'buy-buttons',
                 product: product,
@@ -92,6 +97,11 @@
     {
       "name": "Product Tags",
       "type": "product_tags",
+      "settings": []
+    },
+    {
+      "name": "Product Variant",
+      "type": "product_variant",
       "settings": []
     },
     {

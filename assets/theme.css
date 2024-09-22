@@ -229,3 +229,8 @@ h6,
 /* --------------------
 Custom CSS 
 */
+
+a{
+  color: #2BD896;
+  text-decoration: none;
+}
